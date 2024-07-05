@@ -1,0 +1,23 @@
+{
+  "employees": [
+    {
+      "id": "1",
+      "name": "Portia",
+      "phone": "0781526964",
+      "email": "pnp@gmail.com",
+      "address": "123 Spar street",
+      "Position": "Developer"
+    },
+    {
+      "id": "2",
+      "name": "mirriam DIKELE dikeledi",
+      "identity": "12456",
+      "phone": "0790119094",
+      "email": "mirriamdikeledi87@gmail.com",
+      "address": "666 vezubuhle",
+      "code": "8965",
+      "position": "Supervisor",
+      "image": ""
+    }
+  ]
+}
