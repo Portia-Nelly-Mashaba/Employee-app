@@ -6,17 +6,20 @@
       "phone": "0781526964",
       "email": "pnp@gmail.com",
       "address": "123 Spar street",
-      "Position": "Developer"
+      "Position": "Developer",
+      "identity": "879645312",
+      "code": "0026",
+      "position": "Supervisor"
     },
     {
-      "id": "2",
+      "id": "11",
       "name": "mirriam DIKELE dikeledi",
-      "identity": "12456",
+      "identity": "798645",
       "phone": "0790119094",
       "email": "mirriamdikeledi87@gmail.com",
       "address": "666 vezubuhle",
-      "code": "8965",
-      "position": "Supervisor",
+      "code": "0045",
+      "position": "Junior Developer",
       "image": ""
     }
   ]
