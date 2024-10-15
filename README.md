@@ -1,70 +1,103 @@
-# Getting Started with Create React App
+# Employee Management Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is an **Employee Management App** built using **React.js**, **Bootstrap** for styling, and **JSON Server** as the backend for handling CRUD operations. It allows users to manage employee information, including creating, reading, updating, and deleting employee data via a RESTful API.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Employee Features:
+1. **Home Page:**
+     - Action buttons for adding new the employee.
+     - Action buttons for listing all the employee.
 
-### `npm start`
+2. **Add Employee Page:**
+   - Form with the following inputs:
+     - Name.
+     - Email.
+     - Identity Number.
+     - Mobile Number.
+     - Address.
+     - Code.
+     - Picture.
+     - Position.
+     - Action buttons for editing or deleting the employee.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **Edit Employee Page:**
+   - Pre-filled form with the selected employee's information.
+   - Allows the user to update:
+     - Name.
+     - Email.
+     - Identity Number.
+     - Mobile Number.
+     - Address.
+     - Code.
+     - Button to save changes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+4. **Employee Details Page:**
+   - Displays detailed information about the selected employee:
+     - Name, Email, Position, Identity Number, Mobile Number, Address.
+   - Action buttons to edit or delete the employee.
 
-### `npm test`
+5. **Delete Employee Confirmation:**
+   - Confirmation popup when attempting to delete an employee.
+   - Button to confirm deletion.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Navigation Bar:
+- **Links:**
+  - Home (Action buttons to Add employees and List all employees).
+  - Add Employee (Form to add a new employee).
+  - Employees (Displays the list of employees).
 
-### `npm run build`
+### RESTful API Operations (via JSON Server):
+- **GET /employees:** Fetches all employees.
+- **POST /employees:** Adds a new employee.
+- **PUT /employees/:id:** Updates an existing employee.
+- **DELETE /employees/:id:** Deletes an employee.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technology Stack
+- **Frontend:** React.js
+- **Styling:** Bootstrap
+- **Backend:** JSON Server (as a REST API for CRUD operations)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To run this project locally, follow these steps:
 
-### `npm run eject`
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Portia-Nelly-Mashaba/Employee-app.git
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Install the dependencies:
+   ```bash
+   cd employee-management-app
+   npm install
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. Start the JSON server:
+   ```bash
+   npx json-server --watch db.json --port 5000
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Start the React development server:
+   ```bash
+   npm start
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+5. Open the app in your browser:
+   ```
+   http://localhost:3000
+   ```
 
-## Learn More
+## Images
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Employee Home](src/assets/images/EmployeeAppHome.PNG)
+![Add Employee](src/assets/images/EmployeeAppAddNew.PNG)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Future Enhancements
+1. Implement user authentication for role-based access.
+2. Enable bulk actions like deleting multiple employees at once.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
