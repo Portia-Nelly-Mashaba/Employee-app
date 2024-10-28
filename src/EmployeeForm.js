@@ -18,7 +18,7 @@ function EmployeeForm() {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:3030/employees')
+    fetch('http://localhost:8001/employees')
       .then(res => res.json())
       .then(data => {
         setArray(data);
@@ -35,14 +35,21 @@ function EmployeeForm() {
   }
 
   function handleFileChange(e) {
-    setInputdata({ ...inputdata, image: e.target.files[0] });
+    const file = e.target.files[0];
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setInputdata({ ...inputdata, image: reader.result });
+    };
+    if (file) {
+      reader.readAsDataURL(file);  // Converts file to Base64
+    }
   }
 
   function addInputdata(e) {
     e.preventDefault();
     const newData = { ...inputdata, id: nextId };
 
-    fetch('http://localhost:3030/employees', {
+    fetch('http://localhost:8001/employees', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -74,7 +81,7 @@ function EmployeeForm() {
 
     console.log("Updating employee with data:", updatedData);
 
-    fetch(`http://localhost:3030/employees/${editData.id}`, {
+    fetch(`http://localhost:8001/employees/${editData.id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -96,7 +103,7 @@ function EmployeeForm() {
     if (window.confirm('Are you sure you want to delete this employee?')) {
       const employeeId = array[index].id;
 
-      fetch(`http://localhost:3030/employees/${employeeId}`, {
+      fetch(`http://localhost:8001/employees/${employeeId}`, {
         method: 'DELETE'
       })
         .then(() => {
@@ -184,6 +191,8 @@ function EmployeeForm() {
                       <th>Email Address</th>
                       <th>Address</th>
                       <th>Position</th>
+                      <th>Image</th>
+                      
                     </tr>
                   </thead>
                   <tbody>
@@ -195,6 +204,11 @@ function EmployeeForm() {
                         <td>{item.email}</td>
                         <td>{item.address}</td>
                         <td>{item.position}</td>
+                        <td>
+                          {item.image && (
+                            <img src={item.image} alt="Employee" style={{ width: '50px', height: '50px', objectFit: 'cover' }} />
+                          )}
+                        </td>
                       </tr>
                     ))}
                   </tbody>

@@ -12,7 +12,7 @@ function EmployeeList() {
   const [selectedEmployeeId, setSelectedEmployeeId] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   useEffect(() => {
-    fetch('http://localhost:3030/employees')
+    fetch('http://localhost:8001/employees')
       .then(res => res.json())
       .then(data => {
         console.log('Fetched data:', data);
@@ -43,7 +43,7 @@ function EmployeeList() {
       setRecords(updatedRecords);
       console.log('Updated records:', updatedRecords);
       // Perform PUT request to update backend
-      fetch(`http://localhost:3030/employees/${editedEmployee.id}`, {
+      fetch(`http://localhost:8001/employees/${editedEmployee.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -61,7 +61,7 @@ function EmployeeList() {
   };
   const deleteEmployee = (employeeId) => {
     if (window.confirm('Are you sure you want to delete this employee?')) {
-      fetch(`http://localhost:3030/employees/${employeeId}`, {
+      fetch(`http://localhost:8001/employees/${employeeId}`, {
         method: 'DELETE'
       })
         .then(() => {
